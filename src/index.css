@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  /* Gluggle Jug Factory Custom Colors */
+  --color-pv-teal: #2a7b7b;
+  --color-pv-teal-light: #7dd3c0;
+  --color-pv-teal-50: #e0f2f1;
+  --color-pv-teal-100: #b2dfdb;
+  --color-pv-teal-200: #80cbc4;
+  --color-pv-teal-300: #4db6ac;
+  --color-pv-teal-400: #26a69a;
+  --color-pv-teal-500: #2a7b7b;
+  --color-pv-teal-600: #00897b;
+  --color-pv-teal-700: #00796b;
+  --color-pv-teal-800: #00695c;
+  --color-pv-teal-900: #004d40;
+
+  --color-pv-pink: #d467cb;
+  --color-pv-pink-light: #ffe8f5;
+  --color-pv-pink-100: #fce4ec;
+  --color-pv-pink-200: #f8bbd0;
+  --color-pv-pink-300: #f48fb1;
+  --color-pv-pink-400: #f06292;
+  --color-pv-pink-500: #d467cb;
+  --color-pv-pink-600: #c2185b;
+  --color-pv-pink-700: #ad1457;
+  --color-pv-pink-800: #880e4f;
+  --color-pv-pink-900: #c084fc;
+
+  --color-pv-coral: #d4745f;
+  --color-pv-coral-light: #f5a88b;
+  --color-pv-coral-dark: #b85c47;
+
+  --color-pv-lime: #c4d43e;
+  --color-pv-cream: #f8f4f0;
+  --color-pv-text: #1a1a1a;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold uppercase;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold uppercase;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 md:px-10 md:py-4 bg-pv-coral text-white font-bold uppercase rounded-full hover:bg-pv-coral-dark transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 md:px-10 md:py-4 bg-pv-pink text-white font-bold uppercase rounded-full hover:bg-pv-pink-500 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-lime {
+    @apply px-8 py-3 md:px-10 md:py-4 bg-pv-lime text-pv-text font-bold uppercase rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+}
